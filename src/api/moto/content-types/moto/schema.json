@@ -1,0 +1,88 @@
+{
+  "kind": "collectionType",
+  "collectionName": "motos",
+  "info": {
+    "singularName": "moto",
+    "pluralName": "motos",
+    "displayName": "Moto",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "brand": {
+      "type": "enumeration",
+      "enum": [
+        "Avelloz",
+        "Aprilia",
+        "BMW",
+        "BRP",
+        "Bull",
+        "Dafra",
+        "Ducati",
+        "Haojue",
+        "Harley_Davidson",
+        "Honda",
+        "Kawasaki",
+        "KTM",
+        "Kymco",
+        "Motocar",
+        "Royal_Enfield",
+        "Shineray",
+        "Sousa",
+        "Suzuki",
+        "Traxx",
+        "Triumph",
+        "Vespa",
+        "Voltz",
+        "Wuyang",
+        "Yamaha"
+      ],
+      "enumName": "brand",
+      "required": true
+    },
+    "cylinder": {
+      "type": "integer",
+      "required": true,
+      "max": 8000
+    },
+    "model": {
+      "type": "string",
+      "required": true
+    },
+    "color": {
+      "type": "string",
+      "required": true
+    },
+    "year": {
+      "type": "integer",
+      "required": true,
+      "max": 2099,
+      "min": 1800
+    },
+    "cover": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "photos": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "categorie": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::categoria.categoria",
+      "inversedBy": "motos"
+    }
+  }
+}
